@@ -1,0 +1,22 @@
+<!-- success.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>success</title>
+</head>
+<body>
+<h1>Finger Data</h1>
+
+<!-- Display the stored finger data -->
+<!--<ul>-->
+<!--    <li th:each="fingerData : ${fingerParamsList}" th:text="${fingerData}"></li>-->
+<!--</ul>-->
+
+<p>right_thumb: <span th:text="${rightThumb}"></span></p>
+<p>right_index: <span th:text="${rightIndex}"></span></p>
+<p>left_thumb: <span th:text="${leftThumb}"></span></p>
+<p>left_index: <span th:text="${leftIndex}"></span></p>
+<!-- Add any additional content or styling as needed -->
+</body>
+</html>

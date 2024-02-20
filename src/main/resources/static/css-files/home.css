@@ -1,0 +1,140 @@
+.signin {
+    background-color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.login {
+    position: relative;
+    height: 400px;
+    width: 300px;
+    margin: auto;
+    padding: 60px 60px;
+    background-color: rgb(149, 214, 240);
+    background-size: cover;
+    border-radius: 20px;
+    box-shadow: 0px 20px 20px -5px #848383;
+    margin-top: 40px;
+}
+.logo{
+    height: 30px;
+    margin-left: 90px;
+    margin-bottom: 10px;
+
+}
+::placeholder{
+    font-size: 12px;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+}
+.hidden {
+    display: none;
+}
+
+form {
+    padding-top: 80px;
+}
+
+.active {
+    border-bottom: 1px solid #ffffff;
+    margin-left: 79px;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.nonactive {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+h2 {
+    padding-left: 12px;
+    font-size: 22px;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    letter-spacing: 2px;
+    display: inline-block;
+    font-weight: 100;
+}
+
+h2:first-child {
+    padding-left: 0px;
+}
+
+
+
+.text {
+    border: none;
+    width: 89%;
+    padding: 10px 20px;
+    height: 15px;
+    border-radius: 20px;
+    display: block;
+    background: rgb(255, 255, 255);
+    border: 2px solid rgba(255, 255, 255, 0);
+    color: #463d3d;
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: all .5s ease-in-out;
+}
+
+.text:focus {
+    outline: 0;
+    width: 89%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    background: rgb(255, 255, 255);
+    color: rgb(117, 117, 121);
+    font-weight: 500;
+    box-shadow: 0px 6px 6px -5px #13395a;
+}
+
+
+input[type="text"],
+input[type="password"] {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(117, 117, 121);
+    font-weight: 500;
+}
+
+
+input {
+    display: inline-block;
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+
+
+
+
+
+.signin {
+    background-color: #006FB7;
+    color: #FFF;
+    width: 100%;
+    padding: 10px 20px;
+    display: block;
+    height: 39px;
+    border-radius: 20px;
+    margin-top: 30px;
+    transition: all .5s ease-in-out;
+    border: none;
+    text-transform: uppercase;
+}
+
+.signin:hover {
+    background: #063468;
+    box-shadow: 0px 4px 5px -5px #5a5c5e;
+    cursor: pointer;
+    color: #ffffff;
+
+}
+
+.signin:focus {
+    outline: none;
+}

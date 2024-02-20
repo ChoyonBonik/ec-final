@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fingerprint Verification</title>
+    <link rel="stylesheet" href="./css-files/login.css">
+    <script>
+        function verifyFingerprint() {
+
+
+            let nid = document.getElementById("nid").value;
+            let dob = document.getElementById("dob").value;
+
+            console.log(dob);
+
+
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "MinQ": 30,
+                "Retry": 3,
+                "TokenId": "g86v5s4g5se84g5sfd4g5werx25sdf4f"
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+
+            fetch("http://localhost:20000/api/info/fingerdata", requestOptions)
+                .then(response => response.json())
+                .then(apiResult => {
+
+                    const jsonString = `{"dateOfBirth":"${dob}","nid":"${nid}"}`;
+                    const existingJson = JSON.parse(jsonString);
+                    const resultJson = {};
+
+                    for (const key in apiResult) {
+                        const entry = apiResult[key];
+                        const fingerData = entry.fingerData;
+                        const fingerId = entry.fingerId;
+
+                        switch (fingerId) {
+                            case 1:
+                                resultJson.right_thumb = fingerData;
+                                break;
+                            case 2:
+                                resultJson.right_index = fingerData;
+                                break;
+                            case 6:
+                                resultJson.left_thumb = fingerData;
+                                break;
+                            case 7:
+                                resultJson.left_index = fingerData;
+                                break;
+
+                        }
+                    }
+
+                    existingJson.right_thumb = resultJson.right_thumb || "";
+                    existingJson.right_index = resultJson.right_index || "";
+                    existingJson.left_thumb = resultJson.left_thumb || "";
+                    existingJson.left_index = resultJson.left_index || "";
+
+                    console.log(JSON.stringify(existingJson, null, 2));
+
+                    // var reply = {
+                    //     "dateOfBirth":"123",
+                    //     "nid10Digit":"123",
+                    //     "right_thumb":"123",
+                    //     "right_index":"123",
+                    //     "left_thumb":"123",
+                    //     "left_index":"123"
+                    // };
+
+
+                    fetch("/callEcSdk", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(existingJson)
+                    })
+                        .then(submitResponse => submitResponse.text())
+                        .then(submitData => {
+                            console.log("Submit Server Response:", submitData);
+                        })
+                        .catch(error => {
+                            console.error("Error submitting fingerprint:", error);
+                        });
+                })
+                .catch(error => {
+                    console.error("Error verifying fingerprint:", error);
+                });
+        }
+    </script>
+</head>
+<body>
+<form>
+    <div>
+        <img class="logo" src="./BBL-logo.png" alt="">
+    </div>
+
+    <h2 class="active">FINGERPRINT VERIFICATION</h2>
+
+    <label for="nid">NID:</label>
+    <input type="text" id="nid" class="input-field" required>
+    <br>
+
+    <label for="dob">DATE OF BIRTH:</label>
+    <input type="date" id="dob" class="input-field" required>
+    <br>
+
+    <button type="button" onclick="verifyFingerprint()">Fingerprint</button>
+</form>
+</body>
+</html>

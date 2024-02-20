@@ -1,0 +1,130 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 350px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+#info{
+    margin-top: 5px;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.input-field{
+    border-radius: 20px;
+    outline: 0;
+    overflow: hidden;
+    display: block;
+
+}
+h5{
+    margin-left: -180PX;
+    margin-bottom: -2PX;
+    font-weight: 500;
+    font-size: 14PX;
+}
+::placeholder{
+    font-size: 14px;
+}
+.logo{
+    height: 30px;
+    margin-bottom: 10px;
+
+}
+input[type=date] {
+    text-align: right;
+}
+
+input[type="date"]:before {
+    color: #807373;
+    content: attr(placeholder) !important;
+    margin-right: 0.5em;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #282626;
+
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 16px;
+    box-shadow: 0px 5px 5px -5px #848383;
+}
+
+button {
+
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    box-shadow: 0px 5px 5px -5px #848383;
+    transition: all .5s ease-in-out;
+    display: block;
+}
+button:hover {
+    background: #063468;
+    box-shadow: 0px 4px 5px -5px #5a5c5e;
+    cursor: pointer;
+    color: #ffffff;
+
+}
+
+body {
+
+    background-color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 45px;
+
+}
+
+form {
+    margin: 0 auto;
+    width: 350px;
+    padding: 30px;
+    border-radius: 25px;
+    background-color: rgb(149, 214, 240);;
+    box-shadow: 0px 20px 20px -5px #848383;
+}
+
+
+
+
+button {
+    background-color: #006FB7;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 95px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+
+}
+
+.active {
+    font-size: 18px;
+    /* margin-left: 79px; */
+    color: #ffffff;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}

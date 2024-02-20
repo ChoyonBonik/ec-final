@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINGER-PRINT VALIDATION</title>
+    <link rel="stylesheet" href="./css-files/login.css">
+<!--    <script>-->
+<!--        function ec_sdk() {-->
+
+<!--            var nid = document.getElementById("nid").value;-->
+<!--            var dob = document.getElementById("dob").value;-->
+
+<!--            var myHeaders = new Headers();-->
+<!--            myHeaders.append("Content-Type", "application/json");-->
+
+<!--            var raw = JSON.stringify({-->
+<!--                "MinQ": 30,-->
+<!--                "Retry": 3,-->
+<!--                "TokenId": "g86v5s4g5se84g5sfd4g5werx25sdf4f"-->
+<!--            });-->
+
+<!--            var requestOptions = {-->
+<!--                method: 'POST',-->
+<!--                headers: myHeaders,-->
+<!--                body: raw,-->
+<!--                redirect: 'follow'-->
+<!--            };-->
+
+<!--            fetch("http://localhost:20000/api/info/fingerdata", requestOptions)-->
+<!--                .then(response => response.json())-->
+<!--                .then(apiResult => {-->
+
+<!--                    const jsonString = `{"dateOfBirth":"${dob}","nid10Digit":"${nid}"}`;-->
+
+<!--                    const existingJson = JSON.parse(jsonString);-->
+
+<!--                    const resultJson = {-->
+<!--                        fingerEnums: []-->
+<!--                    };-->
+
+<!--                    for (const key in apiResult) {-->
+<!--                        const entry = apiResult[key];-->
+<!--                        const fingerData = entry.fingerData;-->
+<!--                        resultJson.fingerEnums.push(fingerData);-->
+<!--                    }-->
+
+<!--                    existingJson.fingerEnums = resultJson.fingerEnums;-->
+
+<!--                    console.log(JSON.stringify(existingJson, null, 2));-->
+<!--                })-->
+<!--                .catch(error => console.log('error', error));-->
+<!--        }-->
+
+<!--        function submitDetails() {-->
+
+<!--        }-->
+
+<!--    </script>-->
+</head>
+
+<body>
+<form id="data" action="/callEcSdk" method="post">
+    <div>
+        <img class="logo" src="./BBL-logo.png" alt="">
+    </div>
+
+    <h2 class="active">FINGERPRINT VERIFICATION</h2>
+
+    <label for="nid"></label>
+    <input placeholder="NID:" type="text" id="nid" class="input-field" name="nid" required>
+    <br>
+
+    <label for="dob"></label>
+    <input
+            placeholder="DATE OF BIRTH:"
+            type="date"
+            id="dob"
+            class="input-field"
+            name="dob"
+            pattern="\d{4}-\d{2}-\d{2}"
+            required>
+    <br>
+    <button type="submit">Fingerprint</button>
+    <br>
+
+</form>
+
+<form id="info" action="/info" method="post">
+    <input type="hidden" name="pageData">
+    <button type="submit"> Submit</button>
+</form>
+<script>
+
+</script>
+</body>
+</html>
